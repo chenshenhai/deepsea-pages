@@ -2,21 +2,11 @@
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
-const createLintingRule = () => ({
-  test: /\.(js|jsx)$/,
-  loader: 'eslint-loader',
-  enforce: 'pre',
-  include: [resolve('src'), resolve('test')],
-  options: {
-    formatter: require('eslint-friendly-formatter'),
-    emitWarning: !config.dev.showEslintErrorsInOverlay
-  }
-})
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -38,22 +28,12 @@ module.exports = {
   },
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
 
       {
         test: /\.js|\.jsx$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
-      // {
-      //   test: /\.(js|jsx)/,
-      //   exclude: /node_modules/,
-      //   use: [
-      //     {
-      //       loader: 'babel-loader'
-      //     }
-      //   ]
-      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
@@ -77,9 +57,13 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
+
     ]
   },
+  plugins: [
+
+  ],
   node: {
     setImmediate: false,
     // prevent webpack from injecting mocks to Node native modules
