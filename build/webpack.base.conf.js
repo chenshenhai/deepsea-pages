@@ -21,9 +21,10 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', 'css', 'less'],
     alias: {
       '@': resolve('src'),
+      '@antd': resolve('node_modules/antd'),
     }
   },
   module: {
