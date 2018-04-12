@@ -1,11 +1,8 @@
 import React, {Component} from 'react'
 
 class Content extends Component {
-
-
-
   render () {
-    let {props} = this;
+    let {props} = this
 
     return (
       <div className="page-content">
