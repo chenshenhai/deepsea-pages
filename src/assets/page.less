@@ -1,14 +1,26 @@
 html,
-body {
+body,
+p {
   padding: 0;
   margin: 0;
+}
+
+html {
   background: #f0f0f0;
+  font-family: 'Microsoft YaHei'
 }
 
 .deepsea-page {
   background: #f0f0f0;
   position: relative;
   padding-top: 56px;
+
+  &.no-header {
+    padding-top: 20px;
+    .page-header {
+      display:  none;
+    }
+  }
 
   .page-header {
     height: 56px;

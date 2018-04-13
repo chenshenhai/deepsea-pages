@@ -4,7 +4,10 @@ module.exports = {
   title: 'deepsea-pages',
   blogger: {
     surname: 'hello',
-    name: 'world'
+    name: 'world',
+    description: '',
+    siteBlog: '',
+    siteGithub: ''
   },
   books: [
     {

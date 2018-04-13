@@ -9,7 +9,7 @@ import '@/assets/index.less'
 class App extends Component {
   render () {
     return (
-      <div className="deepsea-page">
+      <div className="deepsea-page no-header">
         <Header />
         <Content>
           <Home />
