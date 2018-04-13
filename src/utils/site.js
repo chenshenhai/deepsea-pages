@@ -2,7 +2,7 @@ import config from '@/config'
 import {isString} from './is-type'
 
 const {location = {}} = window || {}
-const {hostname} = location
+const {hostname, protocol, href} = location
 
 function getBloggerFullName () {
   let fullName
@@ -26,8 +26,20 @@ function checkSite () {
   ].indexOf(hostname) >= 0
 }
 
+function isHTTPS() {
+  return !!protocol.startsWith('https')
+}
+
 export default {
   isSite () {
     return checkSite()
+  },
+
+
+  httpsRedirect() {
+    if( isHTTPS() !== true && getOnlineHostname() === hostname ) {
+      let httpsHref = href.replace(/^http:\/\//, 'https://');
+      location.href = httpsHref;
+    }
   }
 }

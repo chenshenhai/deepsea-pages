@@ -14,6 +14,7 @@ function _$$ (id) {
 }
 
 function init () {
+  site.httpsRedirect();
   if (site.isSite() === true) {
     let $title = _$('title')
     $title.innerText = config.title

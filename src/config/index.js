@@ -13,5 +13,6 @@ module.exports = {
       picture: '',
       link: ''
     }
-  ]
+  ],
+  googleAnalytics: `<script></script>`
 }
