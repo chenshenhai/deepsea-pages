@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Header from '@/components/Header'
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
-import Home from '@/modules/Home'
+import Home from '@/pages/Home'
 
 import '@/assets/index.less'
 

@@ -7,7 +7,8 @@ module.exports = {
     name: 'world',
     description: '',
     siteBlog: '',
-    siteGithub: ''
+    siteGithub: '',
+    token: '',
   },
   books: [
     {
@@ -17,5 +18,12 @@ module.exports = {
       link: ''
     }
   ],
+  discuss: {
+    githubRepos: ''
+  },
+  seo: {
+    description: '',
+    keyword: ['', '']
+  },
   googleAnalytics: `<script></script>`
 }
