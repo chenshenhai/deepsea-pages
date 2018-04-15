@@ -16,8 +16,8 @@ function _$$ (id) {
 function init () {
   site.httpsRedirect();
   if (site.isSite() === true) {
-    let $title = _$('title')
-    $title.innerText = config.title
+    // let $title = _$('title')
+    // $title.innerText = config.title
     ReactDOM.render(<App/>, document.getElementById('app'))
   } else {
     document.write('error')

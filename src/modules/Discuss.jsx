@@ -16,6 +16,8 @@ const {discuss = {}, blogger = {}} = config || {};
 const { githubRepos = '' } = discuss;
 const {token = ''} = blogger;
 
+const _token = token.replace(/\#/ig, '');
+
 const dataUrl = `https://api.github.com/repos/${githubRepos}/issues`;
 const PAGE_SIZE = 10;
 
@@ -26,7 +28,7 @@ function parseDataItem( data = {} ) {
     url: data.html_url || 'javascript:void(0)',
     discussUrl: `${data.html_url}#new_comment_field`,
     avatarUrl: user.avatar_url,
-    description: body.substr(20).replace(/[\'|\`\#\-]/ig, ''),
+    description: body.substr(0,28).replace(/[\'|\`\#\-]/ig, '') + '...',
     addDiscussUrl: data.html_url.replace(/[0-9]$/ig, 'new'),
   }
 }
@@ -73,7 +75,7 @@ class Discuss extends React.Component {
     reqwest({
       url: dataUrl,
       data: {
-        access_token: token,
+        access_token: _token,
         sort: 'updated',
         page: this.state.pageIndex,
         per_page: PAGE_SIZE
