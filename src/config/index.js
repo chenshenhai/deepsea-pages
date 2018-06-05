@@ -5,10 +5,17 @@ module.exports = {
   blogger: {
     surname: 'hello',
     name: 'world',
+    nick: 'my-nick',
     description: '',
     siteBlog: '',
     siteGithub: '',
-    token: '',
+    token: 'xxxxx',
+    labelMap: [
+      {
+        field: 'F2E',
+        list: ['HTML', 'JS', 'CSS']
+      },
+    ]
   },
   books: [
     {

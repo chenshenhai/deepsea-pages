@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Tabs from 'antd/lib/tabs';
 import Books from '@/modules/Books';
 import Discuss from '@/modules/Discuss'
+import About from '@/modules/About'
 import config from '@/config';
 import {redirect} from '@/utils/api'
 import '@antd/lib/tabs/style/index.css';
@@ -33,6 +34,9 @@ class Home extends Component {
             <TabPane tab="讨论组" key="discuss">
               <Discuss />
             </TabPane>
+            {/* <TabPane tab="关于我" key="about">
+              <About />
+            </TabPane> */}
           </Tabs>
 
         </div>
