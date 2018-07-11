@@ -34,9 +34,9 @@ class Home extends Component {
             <TabPane tab="讨论组" key="discuss">
               <Discuss />
             </TabPane>
-            {/* <TabPane tab="关于我" key="about">
+            <TabPane tab="关于我" key="about">
               <About />
-            </TabPane> */}
+            </TabPane>
           </Tabs>
 
         </div>
