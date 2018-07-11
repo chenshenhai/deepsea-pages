@@ -54,7 +54,7 @@ class About extends React.Component {
   }
   render() {
     return (
-      <div style={{'min-height':'720px'}}>
+      <div style={{'minHeight':'720px'}}>
         <div>
           <Tag color="magenta">JavaScript</Tag>
           <Tag color="red">Node.js</Tag>
