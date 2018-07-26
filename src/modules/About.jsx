@@ -66,6 +66,10 @@ class About extends React.Component {
           <Tag color="cyan">Koa.js</Tag>
           <Tag color="blue">Egg.js</Tag>
         </div>
+        <div style={{marginTop: '20px'}}>
+          <p>更多前端技术分享，可关注公众号</p>
+          <img src={config.blogger.shareUrl} />
+        </div>
         <List
           itemLayout="horizontal"
           dataSource={data}
@@ -78,6 +82,7 @@ class About extends React.Component {
             </List.Item>
           )}
         />
+
 
         <div style={{ textAlign: 'center'}}>
           <Popover content={content} placement="top">
