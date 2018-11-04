@@ -21,7 +21,7 @@ class Books extends Component {
                 onClick={()=>{ redirect(item.link) }}
                 hoverable
                 style={{ width: 280, display:'inline-block', margin:10 }}
-                cover={<img alt={item.description}  src={item.picture} style={{width:180, margin:'0 auto'}} />}
+                cover={<div class="book-preview-image"><img alt={item.description}  src={item.picture} style={{width:180, margin:'0 auto'}} /></div>}
               >
                 <Meta
                   title={item.title}
