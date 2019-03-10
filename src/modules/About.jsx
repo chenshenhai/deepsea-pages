@@ -68,7 +68,7 @@ class About extends React.Component {
         </div>
         <div style={{marginTop: '20px'}}>
           <p>更多前端技术分享，可关注公众号</p>
-          <img src={config.blogger.shareUrl} />
+          <img style={{'height': '200px'}} src={config.blogger.shareUrl} />
         </div>
         <List
           itemLayout="horizontal"
@@ -83,18 +83,19 @@ class About extends React.Component {
           )}
         />
 
-
-        <div style={{ textAlign: 'center'}}>
-          <Popover content={content} placement="top">
-            <Button  type="danger">欢迎赞赏我</Button>
-          </Popover>
-          <p style={{color:'#f5222d'}}>觉得文章对你有帮助，就打赏杯咖啡吧!</p>
+        <div style={{textAlign: 'center'}}>
+          {/* <Popover content={content} placement="top">
+            <Button type="danger">欢迎赞赏我</Button>
+          </Popover> */}
+          <p style={{color: '#f5222d', marginBottom: '10px'}}>觉得文章对你有帮助，就打赏杯咖啡吧!</p>
+          <div>
+            <img style={{width: '240px', border: '1px solid #22aa3a'}} src={decodeURIComponent(config.aboutImg)} />
+          </div>
         </div>
 
       </div>
     )
   }
 }
-
 
 export default About
