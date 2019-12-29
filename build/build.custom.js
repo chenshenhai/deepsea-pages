@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const cheerio = require('cheerio')
 const config = require('./../src/config');
+const minify = require('html-minifier').minify;
 
 module.exports = {
   customHTML() {
@@ -26,7 +27,16 @@ module.exports = {
         if( Array.isArray(keyword) ) {
           $title.after(`<meta name="keyword" content="${keyword.join(',')}" />`)
         }
+
+        // clear body inner script
+        const $body = $('body');
+        const $scripts = $body.find('script');
+        $scripts.remove();
+
         let resultIndexHtml = $.html();
+        resultIndexHtml = minify(resultIndexHtml, {
+          minifyCSS: true
+        });
         // resultIndexHtml = resultIndexHtml.replace(/[\r\n]/g, '');
         fs.writeFileSync(indexPath, resultIndexHtml, {encoding: 'utf-8'})
       }
