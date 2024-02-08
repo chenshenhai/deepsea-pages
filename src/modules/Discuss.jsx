@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import reqwest from 'reqwest';
+// import reqwest from 'reqwest';
 import List from 'antd/lib/list';
 import Avatar from 'antd/lib/avatar';
 import Button from 'antd/lib/button';
@@ -57,70 +57,70 @@ class Discuss extends React.Component {
   }
 
   componentDidMount() {
-    this.getData((res) => {
-      let dataList = [];
-      if( Array.isArray(res) ) {
-        dataList = res;
-      }
-      this.setState({
-        loading: false,
-        data: dataList,
-      });
-    });
+    // this.getData((res) => {
+    //   let dataList = [];
+    //   if( Array.isArray(res) ) {
+    //     dataList = res;
+    //   }
+    //   this.setState({
+    //     loading: false,
+    //     data: dataList,
+    //   });
+    // });
   }
 
-  getData (callback) {
-    let that = this;
+  // getData (callback) {
+  //   let that = this;
 
-    reqwest({
-      url: dataUrl,
-      data: {
-        access_token: _token,
-        sort: 'updated',
-        page: this.state.pageIndex,
-        per_page: PAGE_SIZE
-      },
-      type: 'json',
-      method: 'get',
-      contentType: 'application/json',
-      success: (res) => {
-        let dataList = parseDataList(res);
-        let showLoadingMore = true;
-        let pageIndex = that.state.pageIndex + 1;
+  //   reqwest({
+  //     url: dataUrl,
+  //     data: {
+  //       access_token: _token,
+  //       sort: 'updated',
+  //       page: this.state.pageIndex,
+  //       per_page: PAGE_SIZE
+  //     },
+  //     type: 'json',
+  //     method: 'get',
+  //     contentType: 'application/json',
+  //     success: (res) => {
+  //       let dataList = parseDataList(res);
+  //       let showLoadingMore = true;
+  //       let pageIndex = that.state.pageIndex + 1;
 
-        if( dataList.length < PAGE_SIZE ) {
-          showLoadingMore = false;
-        }
-        that.setState({
-          showLoadingMore: showLoadingMore,
-          pageIndex: pageIndex,
-        })
+  //       if( dataList.length < PAGE_SIZE ) {
+  //         showLoadingMore = false;
+  //       }
+  //       that.setState({
+  //         showLoadingMore: showLoadingMore,
+  //         pageIndex: pageIndex,
+  //       })
 
-        if( dataList.length > 0 ) {
-          callback(dataList);
-        }
-      },
-    });
-  }
+  //       if( dataList.length > 0 ) {
+  //         callback(dataList);
+  //       }
+  //     },
+  //   });
+  // }
   onLoadMore () {
     this.setState({
       loadingMore: true,
     });
 
-    this.getData((result) => {
+    // this.getData((result) => {
 
-      const dataList = result;
-      const data = this.state.data.concat(dataList);
-      this.setState({
-        data,
-        loadingMore: false,
-      }, () => {
-        // Resetting window's offsetTop so as to display react-virtualized demo underfloor.
-        // In real scene, you can using public method of react-virtualized:
-        // https://stackoverflow.com/questions/46700726/how-to-use-public-method-updateposition-of-react-virtualized
-        window.dispatchEvent(new Event('resize'));
-      });
-    });
+    //   const dataList = result;
+    //   const data = this.state.data.concat(dataList);
+    //   this.setState({
+    //     data,
+    //     loadingMore: false,
+    //   }, () => {
+    //     // Resetting window's offsetTop so as to display react-virtualized demo underfloor.
+    //     // In real scene, you can using public method of react-virtualized:
+    //     // https://stackoverflow.com/questions/46700726/how-to-use-public-method-updateposition-of-react-virtualized
+    //     window.dispatchEvent(new Event('resize'));
+    //   });
+    // });
   }
   render() {
     const { loading, loadingMore, showLoadingMore, data } = this.state;
