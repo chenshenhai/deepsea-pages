@@ -1,15 +1,15 @@
 import React  from 'react'; 
-import List from 'antd/lib/list';
-import Avatar from 'antd/lib/avatar';
-import Button from 'antd/lib/button';
-import Spin from 'antd/lib/spin';
+import List from 'antd/es/list';
+import Avatar from 'antd/es/avatar';
+import Button from 'antd/es/button';
+import Spin from 'antd/es/spin';
 import config from '@/config';
 import {redirect} from '@/utils/api';
 
-import '@antd/lib/list/style/index.css';
-import '@antd/lib/avatar/style/index.css';
-import '@antd/lib/button/style/index.css';
-import '@antd/lib/spin/style/index.css';
+// import '@antd/es/list/style/index.css';
+// import '@antd/es/avatar/style/index.css';
+// import '@antd/es/button/style/index.css';
+// import '@antd/es/spin/style/index.css';
 
 const {discuss = {}, blogger = {}} = config || {};
 const { githubRepos = '' } = discuss;

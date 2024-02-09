@@ -1,13 +1,12 @@
 import React, {Component} from 'react'
-import Tabs from 'antd/lib/tabs';
-import Books from '@/modules/Books';
-import Discuss from '@/modules/Discuss'
+import Tabs from 'antd/es/tabs';
+// import Books from '@/modules/Books';
+// import Discuss from '@/modules/Discuss'
 import About from '@/modules/About'
 import config from '@/config';
-import {redirect} from '@/utils/api'
-import '@antd/lib/tabs/style/index.css';
-
-const {TabPane} = Tabs;
+// import {redirect} from '@/utils/api'
+// import '@antd/es/tabs/style/index.css';
+ 
 const {books = [], blogger = {}} = config;
 const {siteGithub, siteBlog, description} = blogger;
 
@@ -27,16 +26,20 @@ class Home extends Component {
         </div>
         <div className="home-info">
 
-          <Tabs defaultActiveKey="MyOpenBook" onChange={callback}>
+          <Tabs defaultActiveKey="about"  items={[
+            {
+              key: 'about',
+              label: 'About me',
+              children: (<About />),
+            },
+          ]}>
             {/* <TabPane tab="我的开源书" key="MyOpenBook">
               <Books />
             </TabPane>
             <TabPane tab="讨论组" key="discuss">
               <Discuss />
             </TabPane> */}
-            <TabPane tab="About me" key="about">
-              <About />
-            </TabPane>
+            
           </Tabs>
 
         </div>

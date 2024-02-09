@@ -22,7 +22,8 @@ function getOnlineHostname () {
 function checkSite () {
   return [
     'localhost',
-    getOnlineHostname()
+    getOnlineHostname(),
+    'chenshenhai.com',
   ].indexOf(hostname) >= 0
 }
 

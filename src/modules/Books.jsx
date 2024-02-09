@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import Card from 'antd/lib/card'
-import Avatar from 'antd/lib/avatar'
+import Card from 'antd/es/card'
+import Avatar from 'antd/es/avatar'
 import config from '@/config'
 import {redirect} from '@/utils/api'
-import '@antd/lib/card/style/index.css'
+// import '@antd/es/card/style/index.css'
 
 const { Meta } = Card;
 const {books = [], blogger = {}} = config;

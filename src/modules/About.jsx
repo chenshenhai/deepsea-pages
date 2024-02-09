@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import List from 'antd/lib/list';
-import Button from 'antd/lib/button'; 
-import Divider from 'antd/lib/divider'; 
-import Tag from 'antd/lib/tag';
+import List from 'antd/es/list';
+import Button from 'antd/es/button'; 
+import Divider from 'antd/es/divider'; 
+import Tag from 'antd/es/tag';
 import config from '@/config';
 
-import '@antd/lib/list/style/index.css'; 
-import '@antd/lib/button/style/index.css';
-import '@antd/lib/tag/style/index.css';
-import '@antd/lib/divider/style/index.css';
+// import '@antd/es/list/style/index.css'; 
+// import '@antd/es/button/style/index.css';
+// import '@antd/es/tag/style/index.css';
+// import '@antd/es/divider/style/index.css';
 
 const content = (
   <div>
