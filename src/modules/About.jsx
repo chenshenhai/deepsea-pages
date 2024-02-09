@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import List from 'antd/lib/list';
-import Button from 'antd/lib/button';
-import Popover from 'antd/lib/popover';
+import Button from 'antd/lib/button'; 
+import Divider from 'antd/lib/divider'; 
 import Tag from 'antd/lib/tag';
 import config from '@/config';
 
-import '@antd/lib/list/style/index.css';
-import '@antd/lib/popover/style/index.css';
+import '@antd/lib/list/style/index.css'; 
 import '@antd/lib/button/style/index.css';
 import '@antd/lib/tag/style/index.css';
+import '@antd/lib/divider/style/index.css';
 
 const content = (
   <div>
@@ -28,17 +28,17 @@ if( bookList.length > 0 ) {
 }
 
 const data = [
-  {
-    title: '野生程序员一枚',
-    description: '常玩Web前端开发、Node.js开发和PHP开发，偶尔涉猎Go和Java。',
-  },
-  {
-    description: `业余时间乐于沉淀知识，写写开源书籍。${bookStr} 如有疑问或错误，欢迎指正！`,
-  },
-  {
-    title: '欢迎留言交流',
-    description: '平时工作太忙，一般晚上下班周末才有时间回复！',
-  },
+  // {
+  //   title: '野生程序员一枚',
+  //   description: '常玩Web前端开发、Node.js开发和PHP开发，偶尔涉猎Go和Java。',
+  // },
+  // {
+  //   description: `业余时间乐于沉淀知识，写写开源书籍。${bookStr} 如有疑问或错误，欢迎指正！`,
+  // },
+  // {
+  //   title: '欢迎留言交流',
+  //   description: '平时工作太忙，一般晚上下班周末才有时间回复！',
+  // },
   {
     title: '',
     description: '',
@@ -54,7 +54,7 @@ class About extends React.Component {
   }
   render() {
     return (
-      <div style={{'minHeight':'720px'}}>
+      <div style={{'minHeight':'400px'}}>
         <div>
           <Tag color="magenta">JavaScript</Tag>
           <Tag color="red">Node.js</Tag>
@@ -66,10 +66,10 @@ class About extends React.Component {
           <Tag color="cyan">Koa.js</Tag>
           <Tag color="blue">Egg.js</Tag>
         </div>
-        <div style={{marginTop: '20px'}}>
+        {/* <div style={{marginTop: '20px'}}>
           <p>更多前端技术分享，可关注公众号</p>
           <img style={{'height': '200px'}} src={config.blogger.shareUrl} />
-        </div>
+        </div> */}
         <List
           itemLayout="horizontal"
           dataSource={data}
@@ -83,13 +83,23 @@ class About extends React.Component {
           )}
         />
 
+        <div style={{textAlign: 'left'}}>
+          <p style={{color: '#666666', fontSize: 14, marginBottom: '14px'}}>
+            I am the creator of the open source JavaScript framework <Button  style={{padding: 0}}  type='link' href='https://github.com/idrawjs/idraw' target='_blank'>iDraw.js</Button>.
+
+            You can click <Button style={{padding: 0}} type='link'  href='https://idrawjs.github.io/studio'  target='_blank'>@idraw/studio</Button> to experience the use of <Button  style={{padding: 0}} type='link' href='https://github.com/idrawjs/idraw' target='_blank'>iDraw.js</Button>.
+          </p>
+        </div>
+        <Divider />
         <div style={{textAlign: 'center'}}>
           {/* <Popover content={content} placement="top">
             <Button type="danger">欢迎赞赏我</Button>
           </Popover> */}
-          <p style={{color: '#f5222d', marginBottom: '10px'}}>觉得文章对你有帮助，就打赏杯咖啡吧!</p>
+          
+         
+          <p style={{color: '#666666', fontSize: 14, marginBottom: '14px'}}>If you think my project is helpful to you, just give me a cup of coffee!</p>
           <div>
-            <img style={{width: '240px', border: '1px solid #22aa3a'}} src={decodeURIComponent(config.aboutImg)} />
+          <a href="https://www.buymeacoffee.com/chenshenhai"  target='_blank'><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=chenshenhai&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
           </div>
         </div>
 

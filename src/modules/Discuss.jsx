@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-// import reqwest from 'reqwest';
+import React  from 'react'; 
 import List from 'antd/lib/list';
 import Avatar from 'antd/lib/avatar';
 import Button from 'antd/lib/button';
@@ -16,32 +15,6 @@ const {discuss = {}, blogger = {}} = config || {};
 const { githubRepos = '' } = discuss;
 const {token = ''} = blogger;
 
-const _token = token.replace(/\#/ig, '');
-
-const dataUrl = `https://api.github.com/repos/${githubRepos}/issues`;
-const PAGE_SIZE = 10;
-
-function parseDataItem( data = {} ) {
-  const {user = {}, body = ''} = data;
-  return {
-    title: data.title || '',
-    url: data.html_url || 'javascript:void(0)',
-    discussUrl: `${data.html_url}#new_comment_field`,
-    avatarUrl: user.avatar_url,
-    description: body.substr(0,28).replace(/[\'|\`\#\-]/ig, '') + '...',
-    addDiscussUrl: data.html_url.replace(/[0-9]$/ig, 'new'),
-  }
-}
-
-function parseDataList(result = []) {
-  if( Array.isArray(result) !== true ) {
-    return [];
-  }
-  let dataList = result.map(function(data){
-    return parseDataItem(data);
-  });
-  return dataList;
-}
 
 class Discuss extends React.Component {
 

@@ -28,13 +28,13 @@ class Home extends Component {
         <div className="home-info">
 
           <Tabs defaultActiveKey="MyOpenBook" onChange={callback}>
-            <TabPane tab="我的开源书" key="MyOpenBook">
+            {/* <TabPane tab="我的开源书" key="MyOpenBook">
               <Books />
             </TabPane>
             <TabPane tab="讨论组" key="discuss">
               <Discuss />
-            </TabPane>
-            <TabPane tab="关于我" key="about">
+            </TabPane> */}
+            <TabPane tab="About me" key="about">
               <About />
             </TabPane>
           </Tabs>

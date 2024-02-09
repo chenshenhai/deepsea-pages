@@ -1,15 +1,12 @@
 export default {
-  github: '',
-  avatar: 'https://avatars2.githubusercontent.com/u/29164931',
-  title: 'deepsea-pages',
+  github: 'https://github.com/chenshenhai',
+  avatar: 'https://avatars.githubusercontent.com/u/8216630',
+  title: 'chenshenhai\'s Blog',
   blogger: {
     surname: 'hello',
     name: 'world',
-    nick: 'my-nick',
-    description: '',
-    siteBlog: '',
-    siteGithub: '',
-    token: 'xxxxx',
+    nick: 'csh',
+    description: 'chenshenhai\'s Blog', 
     labelMap: [
       {
         field: 'F2E',
