@@ -23,7 +23,9 @@ function checkSite () {
   return [
     'localhost',
     getOnlineHostname(),
+    'chenshenhai.github.io',
     'chenshenhai.com',
+    'blog.chenshenhai.com',
   ].indexOf(hostname) >= 0
 }
 
